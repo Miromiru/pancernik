@@ -47,8 +47,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 676, 1342.71 )
-scale = Vector2( 5.78882, 7.6084 )
+position = Vector2( 360, 1090.71 )
+scale = Vector2( 2.23603, 3.2636 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]

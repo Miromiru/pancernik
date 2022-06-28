@@ -3,14 +3,35 @@ extends KinematicBody2D
 export (int) var jump_speed = -740
 export (int) var gravity = 1100
 signal hit
+signal texturestatus(status)
 
 var velocity = Vector2()
 var on_floor = true
 var skok = false
 
+export (int) var status
+
 func _ready():
+	print(status)
+	if status == 1:
+		var image = preload("res://Assets/pancernikART.png")
+		$Sprite.set_texture(image)
+		print(status)
+	if status == 2:
+		var image = preload("res://Assets/pancernikART2.png")
+		$Sprite.set_texture(image)
+		print(status)
+	if status == 3:
+		var image = preload("res://Assets/pancernikART3.png")
+		$Sprite.set_texture(image)
+		print(status)
+	if status == 4:
+		var image = preload("res://Assets/pancernikART4.png")
+		$Sprite.set_texture(image)
+		print(status)
+		
 	$AnimationPlayer.play("Walk")
-	pass 
+
 
 
 func _process(delta):	
@@ -44,3 +65,35 @@ func _on_Area2D_area_entered(area):
 	
 func Visibility():
 	self.visible = false
+
+
+func _on_0Pancernik_pressed():
+	var image = preload("res://Assets/pancernikART.png")
+	$Sprite.set_texture(image)
+	status = 1
+	emit_signal("texturestatus", 1)
+	print(status)
+
+
+func _on_50Pancernik_pressed():
+	var image = preload("res://Assets/pancernikART2.png")
+	$Sprite.set_texture(image)
+	status = 2
+	emit_signal("texturestatus", 2)
+	print(status)
+
+
+func _on_150Pancernik_pressed():
+	var image = preload("res://Assets/pancernikART3.png")
+	$Sprite.set_texture(image)
+	status = 3
+	print(status)
+
+
+func _on_200Pancernik_pressed():
+	var image = preload("res://Assets/pancernikART4.png")
+	$Sprite.set_texture(image)
+	status = 4
+	print(status)
+
+

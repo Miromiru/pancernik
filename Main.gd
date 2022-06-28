@@ -1,13 +1,17 @@
 extends Node2D
 export (PackedScene) var Cloud_scene
 export (PackedScene) var Cactus_scene
-var score = 0
+export(int) var score
 var cactus_timer = 0.0
 onready var file = "res://save_game.txt"
+onready var file2 = "res://save_points.txt"
+export(int) var new_score
 
 func _ready():
+	preload("res://Pancernik.tscn")
 	$HUD/MainMenu.visible = false
-	randomize()
+	$HUD/ChangeSkinMenu.visible = false
+	$HUD/ScoreLabel.visible = true
 	$StartTimer.start()
 	pass 
 	
@@ -60,25 +64,44 @@ func _on_CloudTimer_timeout():
 		$CloudTimer.stop()
 
 
+func _on_Pancernik_hit():
+	game_over = true
+	$KoniecGryInfo.visible = true
+
+
 func _on_ScoreTimer_timeout():
 	score += 1
 	$HUD.update_score(score)
 	if game_over == true:
 		$ScoreTimer.stop()
 		load_file(file)
-	
+		loadPoints(file2)
 
-func _on_Pancernik_hit():
-	game_over = true
-	$KoniecGryInfo.visible = true
-	
-	
+func addPoints(new_score):
+	var file = File.new()
+	file.open("res://save_points.txt", File.WRITE)
+	file.store_string(str(new_score))
+	file.close()
+
+func loadPoints(file2):
+	var f = File.new()
+	f.open(file2, File.READ)
+	var index = 1
+	while not f.eof_reached(): # iterate through all lines until the end of file is reached
+		var line = f.get_line()
+		line += " "
+		index += 1
+		new_score = line as int + score
+		print(new_score)
+		addPoints(new_score)
+	f.close()
+	return
+
 func save(score):
 	var file = File.new()
 	file.open("res://save_game.txt", File.WRITE)
 	file.store_string(str(score))
 	file.close()
-	print("dupa")
 
 func load_file(file):
 	var f = File.new()
@@ -87,10 +110,8 @@ func load_file(file):
 	while not f.eof_reached(): # iterate through all lines until the end of file is reached
 		var line = f.get_line()
 		line += " "
-		print(line + str(index))
 		index += 1
 		if line as int < score:
 			save(score)
-			print("kupa")
 	f.close()
 	return

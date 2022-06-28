@@ -14,8 +14,8 @@ scale = Vector2( 2.11382, 1.77268 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 408, 1296 )
-scale = Vector2( 3.26863, 6.91379 )
+position = Vector2( 360, 1090.71 )
+scale = Vector2( 2.236, 3.264 )
 texture = ExtResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]

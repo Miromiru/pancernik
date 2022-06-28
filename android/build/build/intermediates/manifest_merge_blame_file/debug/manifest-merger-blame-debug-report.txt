@@ -1,0 +1,129 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.godotengine.floppypancernik"
+4    android:installLocation="auto"
+5    android:versionCode="1"
+6    android:versionName="1.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="29" />
+10
+11    <supports-screens
+11-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:12:5-16:40
+12        android:largeScreens="true"
+12-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:15:9-36
+13        android:normalScreens="true"
+13-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:14:9-37
+14        android:smallScreens="true"
+14-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:13:9-36
+15        android:xlargeScreens="true" />
+15-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:16:9-37
+16
+17    <uses-feature
+17-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:10:5-78
+18        android:glEsVersion="0x00030000"
+18-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:10:19-51
+19        android:required="true" />
+19-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:10:52-75
+20
+21    <uses-permission
+21-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:11:5-107
+22        android:name="android.permission.READ_EXTERNAL_STORAGE"
+22-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:11:22-77
+23        android:maxSdkVersion="29" />
+23-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:11:78-104
+24    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+24-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:12:5-79
+24-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:12:22-76
+25    <uses-permission
+25-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:13:5-108
+26        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+26-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:13:22-78
+27        android:maxSdkVersion="29" />
+27-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:13:79-105
+28    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+28-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:14:5-80
+28-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\src\debug\AndroidManifest.xml:14:22-77
+29
+30    <application
+30-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:5-94:19
+31        android:allowBackup="true"
+31-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:68-95
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.2.0] C:\Users\pawel\.gradle\caches\transforms-3\9617710e59968e2412aeb3b23f549743\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+33        android:debuggable="true"
+34        android:hasFragileUserData="false"
+34-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:118-152
+35        android:icon="@mipmap/icon"
+35-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:238-265
+36        android:isGame="true"
+36-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:96-117
+37        android:label="@string/godot_project_name_string"
+37-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:18-67
+38        android:requestLegacyExternalStorage="true" >
+38-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:31:153-197
+39        <activity
+39-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:66:9-88:20
+40            android:name="com.godot.game.GodotApp"
+40-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:67:13-37
+41            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+41-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:73:13-141
+42            android:excludeFromRecents="false"
+42-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:71:13-47
+43            android:label="@string/godot_project_name_string"
+43-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:68:13-62
+44            android:launchMode="singleTask"
+44-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:70:13-44
+45            android:resizeableActivity="false"
+45-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:74:13-47
+46            android:screenOrientation="portrait"
+46-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:72:13-50
+47            android:theme="@style/GodotAppSplashTheme" >
+47-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:69:13-55
+48            <intent-filter>
+48-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:80:13-87:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:81:17-69
+49-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:81:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:82:17-77
+51-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:82:27-74
+52
+53                <!--
+54                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+55                platforms.
+56                -->
+57                <category android:name="com.oculus.intent.category.VR" />
+57-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:86:17-74
+57-->C:\Users\pawel\Documents\Godot Projects\pancernik\android\build\AndroidManifest.xml:86:27-71
+58            </intent-filter>
+59        </activity>
+60        <!-- Records the version of the Godot editor used for building -->
+61        <meta-data
+62            android:name="org.godotengine.editor.version"
+63            android:value="3.5.rc4.mono" /> <!-- Records the version of the Godot library -->
+64        <meta-data
+64-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:13:9-15:40
+65            android:name="org.godotengine.library.version"
+65-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:14:13-59
+66            android:value="3.5.0.rc" />
+66-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:15:13-37
+67
+68        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+68-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:17:9-80
+68-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:17:18-77
+69
+70        <activity
+70-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-23:75
+71            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+71-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-70
+72            android:exported="false"
+72-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-37
+73            android:process=":phoenix"
+73-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:22:13-39
+74            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+74-->[godot-lib.debug.aar] C:\Users\pawel\.gradle\caches\transforms-3\53aae29dad36f9874086b9072fe5a93c\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:13-72
+75    </application>
+76
+77</manifest>

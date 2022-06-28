@@ -1,7 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/pancernikART2Sam.png" type="Texture" id=3]
+[ext_resource path="res://Assets/pancernikARTSam.png" type="Texture" id=4]
+[ext_resource path="res://Assets/pancernikART3Sam.png" type="Texture" id=5]
+[ext_resource path="res://Assets/pancernikART4Sam.png" type="Texture" id=6]
+[ext_resource path="res://Pancernik.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Assets/Montserrat-ExtraBold.ttf"
@@ -31,10 +36,43 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
+[sub_resource type="DynamicFont" id=7]
+size = 56
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 54
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+[sub_resource type="RectangleShape2D" id=13]
+
+[sub_resource type="RectangleShape2D" id=14]
+
+[sub_resource type="RectangleShape2D" id=15]
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 anchor_left = 0.125
 anchor_top = 0.085
 anchor_right = 0.921
@@ -48,6 +86,7 @@ align = 1
 valign = 1
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -129,6 +168,159 @@ position = Vector2( -32.1828, -12.958 )
 scale = Vector2( 20, 6 )
 shape = SubResource( 6 )
 
+[node name="ChangeSkinMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="WróćDoMenu" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_top = 1112.0
+margin_right = -114.0
+margin_bottom = -64.0
+custom_colors/font_color = Color( 1, 0.329412, 0.329412, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Powrót do Menu"
+
+[node name="PowrótDoMenu" type="TouchScreenButton" parent="ChangeSkinMenu/WróćDoMenu"]
+position = Vector2( -16, -16 )
+scale = Vector2( 26.1029, 5.53398 )
+shape = SubResource( 8 )
+
+[node name="PointsSum" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 208.0
+margin_top = 136.0
+margin_right = -224.0
+margin_bottom = -992.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="TwojePuntky" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 104.0
+margin_top = 72.0
+margin_right = -112.0
+margin_bottom = -1129.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Twoje Punkty:"
+align = 1
+valign = 1
+
+[node name="0pkt" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 512.0
+margin_right = -472.0
+margin_bottom = -704.0
+custom_fonts/font = SubResource( 11 )
+text = "0 pkt"
+align = 1
+valign = 1
+
+[node name="0Pancernik" type="TouchScreenButton" parent="ChangeSkinMenu/0pkt"]
+position = Vector2( -24, -160 )
+scale = Vector2( 13.96, 13.28 )
+shape = SubResource( 12 )
+
+[node name="TextureRect" type="TextureRect" parent="ChangeSkinMenu/0pkt"]
+margin_top = -120.0
+margin_right = 248.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+stretch_mode = 5
+
+[node name="50pkt" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 440.0
+margin_top = 512.0
+margin_right = -64.0
+margin_bottom = -701.0
+custom_fonts/font = SubResource( 11 )
+text = "50 pkt"
+align = 1
+valign = 1
+
+[node name="50Pancernik" type="TouchScreenButton" parent="ChangeSkinMenu/50pkt"]
+position = Vector2( -32, -160 )
+scale = Vector2( 13.8209, 13.2997 )
+shape = SubResource( 13 )
+
+[node name="TextureRect" type="TextureRect" parent="ChangeSkinMenu/50pkt"]
+margin_left = -24.0
+margin_top = -120.0
+margin_right = 240.0
+margin_bottom = -8.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="150pkt" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 888.0
+margin_right = -464.0
+margin_bottom = -312.0
+custom_fonts/font = SubResource( 11 )
+text = "150 pkt"
+align = 1
+valign = 1
+
+[node name="150Pancernik" type="TouchScreenButton" parent="ChangeSkinMenu/150pkt"]
+position = Vector2( -16, -136 )
+scale = Vector2( 14.52, 11.48 )
+shape = SubResource( 14 )
+
+[node name="TextureRect3" type="TextureRect" parent="ChangeSkinMenu/150pkt"]
+margin_top = -104.0
+margin_right = 264.0
+margin_bottom = 8.0
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="200pkt" type="Label" parent="ChangeSkinMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 440.0
+margin_top = 896.0
+margin_right = -59.0
+margin_bottom = -317.0
+custom_fonts/font = SubResource( 11 )
+text = "200 pkt"
+align = 1
+valign = 1
+
+[node name="200Pancernik" type="TouchScreenButton" parent="ChangeSkinMenu/200pkt"]
+position = Vector2( -24, -144 )
+scale = Vector2( 13.64, 11.52 )
+shape = SubResource( 15 )
+
+[node name="TextureRect2" type="TextureRect" parent="ChangeSkinMenu/200pkt"]
+margin_left = -24.0
+margin_top = -112.0
+margin_right = 240.0
+texture = ExtResource( 6 )
+stretch_mode = 6
+
+[node name="Pancernik" parent="ChangeSkinMenu" instance=ExtResource( 7 )]
+position = Vector2( 560, 216 )
+
 [connection signal="pressed" from="MainMenu/Label2/NowaGraDotyk" to="." method="_on_NowaGraDotyk_pressed"]
 [connection signal="pressed" from="MainMenu/Label3/ZmieńKolorDotyk" to="." method="_on_ZmieKolorDotyk_pressed"]
 [connection signal="pressed" from="MainMenu/Label4/WyjdźDotyk" to="." method="_on_WyjdDotyk_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/WróćDoMenu/PowrótDoMenu" to="." method="_on_PowrtDoMenu_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/0pkt/0Pancernik" to="ChangeSkinMenu/Pancernik" method="_on_0Pancernik_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/50pkt/50Pancernik" to="." method="_on_50Pancernik_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/50pkt/50Pancernik" to="ChangeSkinMenu/Pancernik" method="_on_50Pancernik_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/150pkt/150Pancernik" to="ChangeSkinMenu/Pancernik" method="_on_150Pancernik_pressed"]
+[connection signal="pressed" from="ChangeSkinMenu/200pkt/200Pancernik" to="ChangeSkinMenu/Pancernik" method="_on_200Pancernik_pressed"]
